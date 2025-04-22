@@ -1,0 +1,132 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "internalType": "bytes32", "name": "batchId", "type": "bytes32"},
+      {"indexed": false, "internalType": "bytes32", "name": "merkleRoot", "type": "bytes32"},
+      {"indexed": false, "internalType": "uint256", "name": "fromIndex", "type": "uint256"},
+      {"indexed": false, "internalType": "uint256", "name": "toIndex", "type": "uint256"},
+      {"indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256"}
+    ],
+    "name": "BatchCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "internalType": "uint256", "name": "recordId", "type": "uint256"},
+      {"indexed": false, "internalType": "string", "name": "deviceId", "type": "string"},
+      {"indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256"},
+      {"indexed": false, "internalType": "string", "name": "dataType", "type": "string"},
+      {"indexed": false, "internalType": "string", "name": "data", "type": "string"}
+    ],
+    "name": "DataStored",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "ADMIN_ROLE",
+    "outputs": [{"internalType": "bytes32", "name": "", "type": "bytes32"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "DEVICE_ROLE",
+    "outputs": [{"internalType": "bytes32", "name": "", "type": "bytes32"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "ANALYST_ROLE",
+    "outputs": [{"internalType": "bytes32", "name": "", "type": "bytes32"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "string", "name": "_deviceId", "type": "string"},
+      {"internalType": "string", "name": "_data", "type": "string"},
+      {"internalType": "string", "name": "_dataType", "type": "string"},
+      {"internalType": "string", "name": "_location", "type": "string"}
+    ],
+    "name": "storeData",
+    "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "uint256", "name": "_fromIndex", "type": "uint256"},
+      {"internalType": "uint256", "name": "_toIndex", "type": "uint256"},
+      {"internalType": "bytes32", "name": "_merkleRoot", "type": "bytes32"},
+      {"internalType": "string", "name": "_description", "type": "string"}
+    ],
+    "name": "createBatch",
+    "outputs": [{"internalType": "bytes32", "name": "", "type": "bytes32"}],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "uint256", "name": "_recordId", "type": "uint256"},
+      {"internalType": "bytes32", "name": "_merkleRoot", "type": "bytes32"},
+      {"internalType": "bytes32[]", "name": "_merkleProof", "type": "bytes32[]"}
+    ],
+    "name": "verifyRecord",
+    "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getBatchCount",
+    "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256", "name": "_index", "type": "uint256"}],
+    "name": "getBatchByIndex",
+    "outputs": [
+      {"internalType": "bytes32", "name": "batchId", "type": "bytes32"},
+      {"internalType": "bytes32", "name": "merkleRoot", "type": "bytes32"},
+      {"internalType": "uint256", "name": "fromIndex", "type": "uint256"},
+      {"internalType": "uint256", "name": "toIndex", "type": "uint256"},
+      {"internalType": "uint256", "name": "timestamp", "type": "uint256"},
+      {"internalType": "string", "name": "description", "type": "string"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "address", "name": "account", "type": "address"}],
+    "name": "grantDeviceRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "address", "name": "account", "type": "address"}],
+    "name": "grantAnalystRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "bytes32", "name": "role", "type": "bytes32"},
+      {"internalType": "address", "name": "account", "type": "address"}
+    ],
+    "name": "revokeRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

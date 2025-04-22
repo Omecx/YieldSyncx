@@ -1,0 +1,23 @@
+# ─── SvelteKit & Vite build output ──────────────────────────────────
+.svelte-kit/
+public/build/
+build/
+dist/
+.vite/
+*.cache
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# ─── Frontend & Deployment Platforms ─────────────────────────────────
+.output
+.vercel
+.netlify
+.wrangler
+
+# ─── Generated files ─────────────────────────────────────────────────
+src/lib/blockchain/contract-address.json
+
+# ─── Secrets ─────────────────────────────────────────────────────────
+src/secrets/*
+!src/secrets/.gitkeep
+src/secret

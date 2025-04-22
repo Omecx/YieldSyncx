@@ -1,0 +1,14 @@
+# ─── Hardhat & Solidity artifacts ────────────────────────────────────
+cache/
+artifacts/
+typechain/
+typechain-types/
+coverage/
+coverage.json
+
+# ─── Hardhat Ignition deployments ────────────────────────────────────
+ignition/deployments/chain-31337/
+
+# ─── Secrets ─────────────────────────────────────────────────────────
+secrets/*
+!secrets/.gitkeep
